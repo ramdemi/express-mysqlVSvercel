@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Node express mysql database usage">
+    <meta name="keywords" content="Node.js, Express.js, MySQL, Database Application ">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <b>Page: </b>
+    <select id="selpage" title="Select a Page" onchange="getPage()">
+        <option value=""> Choose a Page</option>
+    </select>
+    <input onclick="changePage('+')" type="button" value=" Next " id="myButton1" class="dume">
+    <input onclick="changePage('-')" type="button" value=" Prev " id="myButton2" class="dume" style="margin-right: 15px;">
+    <span id="dt">Welcome to Express</span>
+ <!--
+    <div>
+        <span>Choose the columns to hide...</span>
+
+        <input type="checkbox" id="Col1" name="Col1" onchange="setHideColumns( 1, this.checked)">
+        <label for="Col1">col 1</label>
+
+        <input type="checkbox" id="Col2" name="Col2" onchange="setHideColumns( 2, this.checked)">
+        <label for="Col2">Col 2</label>
+
+        <input type="checkbox" id="Col3" name="Col3" onchange="setHideColumns( 3, this.checked)">
+        <label for="Col3">Col 3</label>
+    </div>
+-->
+    <div id="container"></div>
+    <script src="/javascripts/manage.js"></script>
+</body>
+</html>

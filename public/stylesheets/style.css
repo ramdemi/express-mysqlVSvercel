@@ -1,0 +1,41 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+#dtable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+    #dtable td, #dtable th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #dtable tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #dtable tr:hover {
+        background-color: #ddd;
+    }
+
+    #dtable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+    .dume:hover{
+        cursor:pointer;
+    }
+    .hide{
+        margin-left:15px;
+    }
