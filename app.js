@@ -5,6 +5,8 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const quotesRouter = require('./routes/quotes');
+const fetchRouter = require('./routes/fetch');
+
 
 const app = express();
 
@@ -12,10 +14,19 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+/*
+app.get('*.js', (req, res, next) => {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
+*/
 app.use(express.static(path.join(__dirname, 'public'), { 'extensions': ['html'], }));
 
 app.use('/', indexRouter);
 app.use('/quotes', quotesRouter);
+app.use('/fetch', fetchRouter);
+
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;

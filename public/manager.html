@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Node express mysql database usage">
@@ -11,28 +10,128 @@
 </head>
 
 <body>
-    <b>Page: </b>
-    <select id="selpage" title="Select a Page" onchange="getPage()">
-        <option value=""> Choose a Page</option>
-    </select>
-    <input onclick="changePage('+')" type="button" value=" Next " id="myButton1" class="dume">
-    <input onclick="changePage('-')" type="button" value=" Prev " id="myButton2" class="dume" style="margin-right: 15px;">
-    <span id="dt">Welcome to Express</span>
- <!--
-    <div>
-        <span>Choose the columns to hide...</span>
+    <h1>Express</h1>
+    <p>Welcome to Express</p>
+    <table data-component="datatable" id="example" data-locale="en" data-search="true" data-loadjson="https://periyodiktablo.net/data">
 
-        <input type="checkbox" id="Col1" name="Col1" onchange="setHideColumns( 1, this.checked)">
-        <label for="Col1">col 1</label>
-
-        <input type="checkbox" id="Col2" name="Col2" onchange="setHideColumns( 2, this.checked)">
-        <label for="Col2">Col 2</label>
-
-        <input type="checkbox" id="Col3" name="Col3" onchange="setHideColumns( 3, this.checked)">
-        <label for="Col3">Col 3</label>
-    </div>
--->
-    <div id="container"></div>
-    <script src="/javascripts/manage.js"></script>
+        <!--        <thead>
+                    <tr>
+                        <th>User code</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Country</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>046127</td>
+                        <td>John</td>
+                        <td>Smith</td>
+                        <td>United Kingdom of Great Britain and Northen Ireland</td>
+                        <td>Glasgow</td>
+                    </tr>
+                    <tr>
+                        <td>127665</td>
+                        <td>Luca</td>
+                        <td>Bernasconi</td>
+                        <td>Switzerland</td>
+                        <td>Lugano</td>
+                    </tr>
+                    <tr>
+                        <td>446890</td>
+                        <td>Paul</td>
+                        <td>Hoffmann</td>
+                        <td>Germany</td>
+                        <td>Dresden</td>
+                    </tr>
+                    <tr>
+                        <td>780445</td>
+                        <td>Charles</td>
+                        <td>Martin</td>
+                        <td>France</td>
+                        <td>Paris</td>
+                    </tr>
+                    <tr>
+                        <td>901267</td>
+                        <td>Michael</td>
+                        <td>Brown</td>
+                        <td>United States of America</td>
+                        <td>Miami</td>
+                    </tr>
+                    <tr>
+                        <td>671249</td>
+                        <td>Antonio</td>
+                        <td>Sessa</td>
+                        <td>Italy</td>
+                        <td>Salerno</td>
+                    </tr>
+                    <tr>
+                        <td>671249</td>
+                        <td>Antonio</td>
+                        <td>Sessa</td>
+                        <td>Italy</td>
+                        <td>Salerno</td>
+                    </tr>
+                    <tr>
+                        <td>671249</td>
+                        <td>Antonio</td>
+                        <td>Sessa</td>
+                        <td>Italy</td>
+                        <td>Salerno</td>
+                    </tr>
+                    <tr>
+                        <td>671249</td>
+                        <td>Antonio</td>
+                        <td>Sessa</td>
+                        <td>Italy</td>
+                        <td>Salerno</td>
+                    </tr>
+                    <tr>
+                        <td>671249</td>
+                        <td>Antonio</td>
+                        <td>Sessa</td>
+                        <td>Italy</td>
+                        <td>Salerno</td>
+                    </tr>
+                    <tr>
+                        <td>671249</td>
+                        <td>Antonio</td>
+                        <td>Sessa</td>
+                        <td>Italy</td>
+                        <td>Salerno</td>
+                    </tr>
+                    <tr>
+                        <td>671249</td>
+                        <td>Antonio</td>
+                        <td>Sessa</td>
+                        <td>Italy</td>
+                        <td>Salerno</td>
+                    </tr>
+                    <tr>
+                        <td>671249</td>
+                        <td>Antonio</td>
+                        <td>Sessa</td>
+                        <td>Italy</td>
+                        <td>Salerno</td>
+                    </tr>
+                    <tr>
+                        <td>671249</td>
+                        <td>Antonio</td>
+                        <td>Sessa</td>
+                        <td>Italy</td>
+                        <td>Salerno</td>
+                    </tr>
+                    <tr>
+                        <td>671249</td>
+                        <td>Antonio</td>
+                        <td>Sessa</td>
+                        <td>Italy</td>
+                        <td>Salerno</td>
+                    </tr>
+                </tbody>
+        -->
+    </table>
+    <script src="javascripts/manage.js"></script>
 </body>
 </html>

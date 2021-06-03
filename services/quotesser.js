@@ -12,11 +12,12 @@ async function getMultiple(page = 1, listpp = 8) {
     const co = await db.query(
         'SELECT COUNT(*) FROM quote'
     );
+    cc = Object.values(co[0])[0];
     const data = helper.emptyOrRows(rows);
     const meta = { page };
-
+    const count =  cc ;
     return {
-        co,
+        count,
         data,
         meta,
     }
