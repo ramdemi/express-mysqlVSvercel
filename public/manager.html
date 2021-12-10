@@ -6,13 +6,13 @@
     <meta name="author" content="John Doe">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Express</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
 
 <body>
     <h1>Express</h1>
     <p>Welcome to Express</p>
-    <table data-component="datatable" id="example" data-locale="en" data-search="true" data-loadjson="https://periyodiktablo.net/data">
+    <table data-component="datatable" id="example" data-locale="en" data-search="true" data-loadjson="https://periyodiktablo.net/data.json">
 
         <!--        <thead>
                     <tr>
@@ -132,6 +132,29 @@
                 </tbody>
         -->
     </table>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const ljson = urlParams.get('loadjson');
+        const lproxy = urlParams.get('proxy');
+        const lfromdb = urlParams.get('loadfromdb');
+        const dt = document.getElementById('example');
+
+        if (ljson) {
+            console.log(ljson);
+            dt.setAttribute('data-loadjson', ljson);
+        }
+        if (lproxy) {
+            console.log(lproxy);
+            dt.setAttribute('data-proxy', lproxy);
+        }
+        if (lfromdb) {
+            console.log(lfromdb);
+            dt.setAttribute('data-loadfromdb', lfromdb);
+            dt.removeAttribute('data-loadjson');
+            dt.removeAttribute('data-proxy');
+        }
+    </script>
     <script src="javascripts/manage.js"></script>
 </body>
 </html>

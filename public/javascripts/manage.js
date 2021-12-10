@@ -149,11 +149,14 @@ class DataTable {
             this.optMode = 1;
             let file = this.el.dataset.loadjson;
             let rem = 'https://thingproxy.freeboard.io/fetch/'; //reverse proxy 
+            // let rem = 'https://ramproxy.vercel.app/fetch?remurl='; // my proxy
+            if (this.el.dataset.proxy) rem = this.el.dataset.proxy;
             let remote = (file.indexOf(':') < 0) ? false : true;
             if (!remote && !file.startsWith('/')) file = '/' + file;
-            if (!file.endsWith('.json', file)) file += '.json';
+            //if (!file.endsWith('.json', file)) file += '.json';
             remote ? this.hosturl = rem + file : this.hosturl = file;
             //this.hosturl = 'https://periyodiktablo.net/prox.php?csurl=https://blazor50.netbes.xyz/db/data.txt';
+            //this.hosturl = 'http://localhost:3000/fetch?remurl=https://periyodiktablo.net/data.json';
             //this.hosturl = 'https://periyodiktablo.net/data.txt';
             this.loaderurl();
             return;
