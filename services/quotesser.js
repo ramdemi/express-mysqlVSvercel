@@ -33,11 +33,11 @@ function validateCreate(quote) {
     }
 
     if (!quote.quote) {
-        messages.push('Quote is empty');
+        messages.push('Quote quote is empty');
     }
 
     if (!quote.author) {
-        messages.push('Quote is empty');
+        messages.push('Quote author is empty');
     }
 
     if (quote.quote && quote.quote.length > 255) {

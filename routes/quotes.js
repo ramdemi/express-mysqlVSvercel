@@ -13,13 +13,20 @@ router.get('/', async function(req, res, next) {
 });
 
 /* POST quotes */
-router.post('/', async function(req, res, next) {
-  try {
-    res.json(await quotes.create(req.body));
-  } catch (err) {
-    console.error(`Error while posting quotes `, err.message);
-    next(err);
-  }
+router.post('/', async function (req, res, next) {
+    try {
+        if (req.headers["origin"]) {
+            res.setHeader("Access-Control-Allow-Origin", req.headers["origin"]);
+        }
+        else {
+            res.setHeader("Access-Control-Allow-Origin", "*");
+        }
+        let ct = req.is('*/*');
+        res.json(await quotes.create(ct == "text/plain" ? JSON.parse(req.body) : req.body));
+    } catch (err) {
+        console.error(`Error while posting quotes `, err.message);
+        next(err);
+    }
 });
 
 module.exports = router;

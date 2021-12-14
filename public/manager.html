@@ -154,6 +154,34 @@
             dt.removeAttribute('data-loadjson');
             dt.removeAttribute('data-proxy');
         }
+        function mypost() {
+            dataToSend = '{ "quote": "4hey@mail.com", "author": "10100010" }';
+            dataReceived = "";
+            fetch("/quotes", {
+                mode: "same-origin",
+                method: "post",
+                headers: { "Content-Type": "application/json;charset=UTF-8", "Accept": "application/json" },
+                body: dataToSend
+            })
+                .then(resp => {
+                    if (resp.status === 200) {
+                        return resp.json()
+                    } else {
+                        console.log("Status: " + resp.status)
+                        return Promise.reject("server")
+                    }
+                })
+                .then(dataJson => {
+                    dataReceived = JSON.parse(dataJson)
+                })
+                .catch(err => {
+                    if (err === "server") return
+                    console.log(err)
+                })
+
+            console.log(`Received: ${dataReceived}`)
+
+        }
     </script>
     <script src="javascripts/manage.js"></script>
 </body>
